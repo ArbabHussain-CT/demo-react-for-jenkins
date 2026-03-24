@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+    dev:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev # You'll need a dev-specific Dockerfile
+        ports:
+            - '5173:5173' # Vite default port
+        volumes:
+            - .:/app
+            - /app/node_modules # Don't mount node_modules to avoid conflicts
+        command: npm run dev

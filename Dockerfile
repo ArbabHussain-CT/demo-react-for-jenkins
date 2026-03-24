@@ -1,5 +1,5 @@
 # dependency stage
-FROM node:20 AS deps
+FROM node:lts-alpine AS deps
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install
 
 
 # build stage
-FROM node:20 AS builder
+FROM node:lts-alpine AS builder
 
 WORKDIR /app
 
